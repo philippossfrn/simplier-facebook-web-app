@@ -1,0 +1,645 @@
+/*Page background*/
+body{
+/*background: #6600ff; */
+background-image: url('pyramid.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+ /*background-repeat: no-repeat;
+   background-attachment: fixed;
+  background-size: cover;*/
+}
+.delete_user_area{
+  display: none; /* Hidden by default */
+}
+/*                             Modal for full post    */
+.see_full_post_modal {
+  display: none; /* Hidden by default */
+   position: fixed;/* Stay in place */
+  z-index: 1; /* Sit on top */
+    padding-top: 50px; 
+  padding-bottom: 50px;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 100%; /* Full width */
+  height: 80%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  /* margin: 0 auto; */
+}
+
+/* Modal Content */
+.see_full_post_modal_content {
+  background-color: #fefefe;
+  border-radius: 25px;
+  margin: auto;
+    margin: 3px auto 3px auto; /* 3px from the top, 3x from the bottom and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+}
+
+.actual_map_inside_full_post_modal{
+   
+    width: 100%;
+   border-radius: 25px; 
+}
+/* The Close Button */
+.close_see_full_post_modal {
+  position: relative;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_see_full_post_modal:hover,
+.close_see_full_post_modal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Side menu */
+.sidenav {
+  height: 30%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #1111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sticky_this {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#post_area{
+    /*height: 25%;
+    width: 25px; */
+    text-align: center;
+    display: none;
+    margin: auto;
+
+}
+#show_posts_area{
+    visibility: hidden;
+}
+#user_posts_area{
+    text-align: center;
+    width: 50%;
+    height: 20%;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+}
+#show_posts_of_another_user{
+    text-align: center;
+    width: 50%;
+    height: 20%;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .close_side_menu {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*Customize input style*/
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc; 
+  box-sizing: border-box;
+  border-radius: 20px
+}
+
+/*Customize textarea style*/
+textarea {
+  border-radius: 20px
+}
+
+/*Customize register button*/
+#register_button {
+  width: 8%;
+  height: 25px;
+  padding:5px 15px; 
+  background:white; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #6600ff ;
+}
+#sign_in_button {
+  width: 8%;
+  height: 25px;
+  padding:5px 15px; 
+  background:white  ; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #6600ff ;
+}
+#post {
+  width: 10%;
+  height: 25px;
+  padding:5px 15px; 
+  background:white  ; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #6600ff ;
+}
+#post_on_wall {
+  visibility: hidden;
+  width: 10%;
+  height: 25px;
+  padding:5px 15px; 
+  background:white  ; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #6600ff ;
+}
+.delete_post_btn {
+  width: 30%;
+  height: 25px;
+  padding:5px 15px; 
+  background:silver; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #6600ff ;
+}
+.post_area{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  /*border: 1px solid #ccc; */
+  box-sizing: border-box;
+  border-radius: 20px  
+}
+
+
+#close_list_with_all_usernames{
+    display:none;
+    width: 8%;
+  height: 25px;
+  padding:5px 15px; 
+  background:white  ; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #6600ff ;
+    margin-left: 590px;
+   float: center;
+}
+#see_another_user_posts{
+    display:none;
+    width: 13%;
+  height: 25px;
+  padding:5px 15px; 
+  background:white  ; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #6600ff ;
+    margin-left: 590px;
+   float: center;
+}
+
+/*Customize sumbit button
+input[type=submit] {
+  width: 20%;
+  height: 50px;
+  padding:5px 15px; 
+  background:#6600ff; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: white;
+}*/
+
+#update_profil_button{
+  display: none; /* Hidden by default */
+  margin: auto;
+  width: 20%;
+  height: 50px;
+  padding:5px 15px; 
+  background:#6600ff; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: white;
+}
+#update_profil_button:active {
+  transform: translateY(4px);
+}
+#sumbit_button{
+  margin: auto;
+  width: 20%;
+  height: 50px;
+  padding:5px 15px; 
+  background:#6600ff; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: white;
+}
+#sumbit_button:active {
+  transform: translateY(4px);
+}
+#sign_in_button_inside_modal{
+  width: 20%;
+  height: 50px;
+  padding:5px 15px; 
+  background:#6600ff; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#sign_in_button_inside_modal:active {
+  transform: translateY(4px);
+}
+
+
+
+/*Everything in this div align to this*/
+.center_align{
+  text-align: center;
+  
+}
+.right_align{
+  text-align: right;
+}
+.left_align{
+  text-align: left;
+}
+
+
+/*Customize labels*/
+label{
+	background-color: transparent;
+	color: solid black;
+
+}
+
+/*Customize valid-invalid pic */
+span {
+  position: absolute;
+}
+
+/*Customize position--inside inout*/
+span::after{
+  right: 15px;
+  top: 20px;
+  position: absolute;
+}
+
+/*Customize invalid pic */
+input:invalid + span::after {
+  content: '✖';
+  color: red;
+}
+
+/*Customize valid pic */
+input:valid+span::after {
+  content: '✓';
+  color: green;
+}
+
+/*Make hobbies area not resizable */
+#hobbies{
+	resize: none;
+}
+
+/*Make more_infos area not resizable */
+#more_infos{
+	resize: none;
+}
+
+/* Customize modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: all; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; 
+  padding-bottom: 50px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: transparent; /* around */
+  margin: 0 auto;
+}
+.sign_in_modal {
+  display: none; /* Hidden by default */
+  position: all; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; 
+  padding-bottom: 50px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: transparent; /* around */
+  margin: 0 auto;
+}
+
+/*Customize modal content */
+.modal_content {
+  background-color: white; /* inside */
+  margin: 3px auto 3px auto; /* 3px from the top, 3x from the bottom and centered */
+  padding: 20px;
+  border-radius: 25px;
+	/*border-color: white; */
+  width: 80%;
+  text-align: center;
+}
+
+.sign_in_modal_content {
+  background-color: white; /* inside */
+  margin: 3px auto 3px auto; /* 3px from the top, 3x from the bottom and centered */
+  padding: 20px;
+  border-radius: 25px;
+	/*border-color: white; */
+  width: 80%;
+  text-align: center;
+}
+
+/* Customize close button */
+.close {
+  position: relative;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+/* Customize close button */
+.sign_in_close {
+  position: relative;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/*When mouse hover close button change*/
+.close:hover,.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.sign_in_close:hover,.sign_in_close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Everything in this div align to this*/
+.left-align{
+	display: inline-block;
+	text-align: left;
+}
+
+/*Everything in this div align to this*/
+.right-align{
+  float: right;
+	display: inline-block;
+	text-align: right;
+}
+
+#name_for_session{
+    visibility: hidden;
+    
+}
+
+#show_post_area{
+   text-align:center;
+   width: 50%;
+   height:  20%;
+   background-color: white;
+   border-radius: 20px;
+   margin:auto;
+    
+}
+#show_location {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+#ask_user_to_reveal_location{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+#show_location:active {
+  transform: translateY(4px);
+}
+
+#do_not_show_location {
+  background-color: rgb(231, 7, 7); /* Red */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+#do_not_show_location:active {
+  transform: translateY(4px);
+}
+
+#autocomplete_location {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+#autocomplete_coords {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+#autocomplete_location:active{
+  transform: translateY(4px);
+}
+#autocomplete_coords:active {
+  transform: translateY(4px);
+}
+
+#do_not_autocomplete_location {
+  background-color: rgb(231, 7, 7); /* Red */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+#do_not_autocomplete_location:active {
+  transform: translateY(4px);
+}
+
+/*media query to be responsive for 690px and under (including 480px)*/
+@media only screen and (max-width: 690px){
+    #register_button {
+    width: 30%;
+
+  }
+  input[type=text],input[type=password],  input[type=email] {
+    width: 50%;
+  }
+
+  input[type=radio] {
+    width: 60%;
+  }
+
+  input[type=checkbox] {
+    width: 25%;
+  }
+
+  .modal {
+    width: 100%;
+  }
+
+  .modal_content {
+    width: 100%;
+  }
+
+  .close {
+    float: left;
+  }
+
+  .right-align{
+  display: inline-block;
+  text-align: left;
+}
+
+}
+
+/*media query to be responsive for 360px and under*/
+@media only screen and (max-width: 360px){
+  #register_button {
+    width: 30%;
+  }
+
+  input[type=text],input[type=password],  input[type=email] {
+    width: 50%;
+  }
+
+  #pass_conf{
+    width: 70%;
+  }
+
+  input[type=radio] {
+    width: 60%;
+  }
+
+  input[type=checkbox] {
+    width: 25%;
+  }
+
+  input[type=submit] {
+    width: 30%;
+  }
+
+  #select_country{
+    width: 30%
+  }
+
+  #hobbies, #more_infos{
+    width: 80%;
+  }
+
+  .modal {
+    width: 100%; 
+  }
+
+  .modal_content {
+    width: 100%;
+  }
+
+  .close {
+    float: left;
+  }
+
+}

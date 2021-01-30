@@ -1,0 +1,23 @@
+It's a web-app that simulates a much more simplier version of current Facebook.
+Runs Java-Js-Html(css).
+Runs mostly with ajax requests made by js from/to java servlets and external APIs (OSM && face regpgnition)
+It's a team project made in a CS class.
+
+Features:
+
+-- User log in/register
+-- User can post sth
+-- Each user has his own wall (Showing only his posts)
+-- Each user can see other's people posts (main wall)
+-- Log in with biometrics using APIs (face regognition)
+-- Using leaflet OSM maps 
+-- User can upload picture to the main wall
+-- User can spectate another's specific user's wall
+
+Set up guide:
+
+-- Needs maven server to run (apache)
+-- Created/works on Netbeans
+-- Neeeds Custom DB to run 
+
+
